@@ -1,12 +1,12 @@
 /* Hotel Booking System - Logic */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', function () {
             navLinks.classList.toggle('active');
         });
     }
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bookingForm = document.getElementById('bookingForm');
 
     if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
+        bookingForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
             // Elements
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const checkIn = new Date(bookingForm.checkin.value);
             const checkOut = new Date(bookingForm.checkout.value);
             const today = new Date();
-            today.setHours(0, 0, 0, 0);
+            // Removed complex time setting
 
             // Reset Messages
             successMsg.style.display = 'none';
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('totalPrice').textContent = "Total Price: $0";
 
                 // Hide message after 5 seconds
-                setTimeout(() => {
+                setTimeout(function () {
                     successMsg.style.display = 'none';
                 }, 5000);
             } else {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'family': 25
         };
 
-        const calculatePrice = () => {
+        const calculatePrice = function () {
             const checkInVal = bookingForm.checkin.value;
             const checkOutVal = bookingForm.checkout.value;
             const roomType = bookingForm.roomtype.value;
