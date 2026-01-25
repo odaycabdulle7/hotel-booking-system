@@ -105,9 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Price Calculation Logic
         const roomPrices = {
-            'single': 80,
-            'double': 150,
-            'family': 250
+            'single': 15,
+            'double': 20,
+            'family': 25
         };
 
         const calculatePrice = () => {
