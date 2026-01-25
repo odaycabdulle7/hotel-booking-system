@@ -319,6 +319,14 @@ nav {
     border-color: transparent;
 }
 
+#totalPrice {
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 0.75rem;
+    width: 100%;
+    /* Keep other styles consistent with text inputs */
+}
+
 .success-message {
     background-color: var(--success-color);
     color: white;
