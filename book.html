@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Berbera Bay Resort</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Berbera Bay Resort</div>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="book.html" class="active btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-padding booking-section">
+        <div class="container">
+            <div class="text-center">
+                <h1>Book Your Stay</h1>
+                <p>Select a room and check availability.</p>
+            </div>
+
+            <br><br>
+
+            <!-- Price Cards -->
+            <div class="price-cards">
+                <div class="price-card">
+                    <h3>Single Room</h3>
+                    <p>Perfect for solo travelers.</p>
+                    <div class="price">$15 <span style="font-size: 1rem; color: #666;">/ night</span></div>
+                    <ul style="text-align: left; margin-bottom: 1.5rem;">
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> Ocean View</li>
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> Free Breakfast</li>
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> Wi-Fi</li>
+                    </ul>
+                </div>
+                <div class="price-card" style="border-color: var(--secondary-color); transform: scale(1.05);">
+                    <div
+                        style="background: var(--secondary-color); color: white; padding: 0.25rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                        POPULAR</div>
+                    <h3>Double Room</h3>
+                    <p>Ideal for couples.</p>
+                    <div class="price"> $20 <span style="font-size: 1rem; color: #666;">/ night</span></div>
+                    <ul style="text-align: left; margin-bottom: 1.5rem;">
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> King Bed</li>
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> Balcony</li>
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> All Facilities</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>Family Suite</h3>
+                    <p>Spacious comfort for everyone.</p>
+                    <div class="price">$25 <span style="font-size: 1rem; color: #666;">/ night</span></div>
+                    <ul style="text-align: left; margin-bottom: 1.5rem;">
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> 2 Bedrooms</li>
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> Living Area</li>
+                        <li><i class="fas fa-check" style="color: var(--success-color);"></i> Kitchenette</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="booking-form-container">
+                <h2 class="text-center" style="margin-bottom: 2rem;">Reservation Form</h2>
+
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" required placeholder="e.g. Cabdalla Mohamed">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Phone or Email</label>
+                        <input type="text" id="contact" required placeholder="+252 61...">
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="checkin">Check-in Date</label>
+                            <input type="date" id="checkin" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="checkout">Check-out Date</label>
+                            <input type="date" id="checkout" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roomtype">Room Type</label>
+                        <select id="roomtype">
+                            <option value="single">Single Room ($15)</option>
+                            <option value="double" selected>Double Room ($20)</option>
+                            <option value="family">Family Suite ($25)</option>
+                        </select>
+                    </div>
+
+                    <div id="totalPrice" class="total-price"
+                        style="text-align: center; font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem; color: var(--primary-color);">
+                        Total Price: $0</div>
+                    <button type="submit" class="btn" style="width: 100%;">Confirm Booking</button>
+
+                    <div id="successMessage" class="success-message"></div>
+                    <div id="errorMessage" class="error-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 mareero hotel bosaso . All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
