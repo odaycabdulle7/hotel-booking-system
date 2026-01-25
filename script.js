@@ -11,32 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Interactive Date Constraints (The "Normal Way")
-    const checkInInput = document.getElementById('checkin');
-    const checkOutInput = document.getElementById('checkout');
+    // Interactive Date Constraints (Removed for simplicity)
 
-    if (checkInInput && checkOutInput) {
-        // 1. Set minimum check-in date to Today
-        const today = new Date().toISOString().split('T')[0];
-        checkInInput.setAttribute('min', today);
-
-        // 2. When Check-in changes, update Check-out min date
-        checkInInput.addEventListener('change', () => {
-            if (checkInInput.value) {
-                // Calculate next day
-                const checkInDate = new Date(checkInInput.value);
-                checkInDate.setDate(checkInDate.getDate() + 1);
-                const nextDay = checkInDate.toISOString().split('T')[0];
-
-                checkOutInput.setAttribute('min', nextDay);
-
-                // If current checkout is invalid (before or same as new checkin), clear it
-                if (checkOutInput.value && checkOutInput.value < nextDay) {
-                    checkOutInput.value = "";
-                }
-            }
-        });
-    }
 
     // Booking Form Validation
     const bookingForm = document.getElementById('bookingForm');
@@ -65,11 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let errors = [];
 
             // Phone Validation
-            // Must start with 25261 and have exactly 7 more digits (total 12 digits)
-            const phoneRegex = /^25261\d{7}$/;
-            if (!phoneRegex.test(phone)) {
+            // Simpler check: Just length
+            if (phone.length < 5) {
                 isValid = false;
-                errors.push("Phone number must start with 25261 and be followed by 7 digits (e.g., 25261xxxxxxx).");
+                errors.push("Phone number is too short.");
             }
 
             // Date Validation
@@ -85,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Show Success Message
                 successMsg.style.display = 'block';
                 // Personalize the message
-                const name = bookingForm.fullname.value.split(' ')[0] || "Guest";
+                const name = bookingForm.fullname.value;
                 successMsg.textContent = `Dear ${name}, Booking Confirmed! We look forward to hosting you.`;
 
                 // Clear Form
