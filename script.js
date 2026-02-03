@@ -3,7 +3,7 @@ const list = document.querySelector('.nav-links');
 
 menu.onclick = function () {
     if (list.className == "nav-links") {
-        //list.className = "nav-links active";
+        list.className = "nav-links active";
     } else {
         list.className = "nav-links";
     }
