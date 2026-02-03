@@ -1,13 +1,13 @@
 const menu = document.querySelector('.hamburger');
 const list = document.querySelector('.nav-links');
 
-//menu.onclick = function () {
-    //if (list.className == "nav-links") {
+menu.onclick = function () {
+    if (list.className == "nav-links") {
         //list.className = "nav-links active";
-    //} else {
-        //list.className = "nav-links";
-    //}
-//};
+    } else {
+        list.className = "nav-links";
+    }
+};
 
 
 const d1_el = document.getElementById('checkin');
