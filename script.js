@@ -1,13 +1,14 @@
 const menu = document.querySelector('.hamburger');
 const list = document.querySelector('.nav-links');
 
-menu.onclick = function () {
-    if (list.className == "nav-links") {
-        list.className = "nav-links active";
-    } else {
-        list.className = "nav-links";
-    }
-};
+//menu.onclick = function () {
+    //if (list.className == "nav-links") {
+        //list.className = "nav-links active";
+    //} else {
+        //list.className = "nav-links";
+    //}
+//};
+
 
 const d1_el = document.getElementById('checkin');
 const d2_el = document.getElementById('checkout');
@@ -45,22 +46,10 @@ form.onsubmit = function (event) {
     const inDate = d1_el.value;
     const outDate = d2_el.value;
 
-    if (name.length == 0) {
-        alert("Please write Name");
-    } else if (name > 0) {
+    if (!isNaN(name)) {
         alert("Name must be string");
-    } else if (phone.length == 0) {
-        alert("Please write Phone");
-    } else if (phone.substring(0, 5) != "25261") {
-        alert("Phone must start with 25261");
     } else if (phone.length != 12) {
         alert("Phone must be 12 numbers");
-    } else if (inDate.length == 0) {
-        alert("Select Check-in");
-    } else if (outDate.length == 0) {
-        alert("Select Check-out");
-    } else if (new Date(inDate) < new Date().setHours(0, 0, 0, 0)) {
-        alert("Check-in date is past");
     } else if (new Date(inDate) >= new Date(outDate)) {
         alert("Check-out must be after Check-in");
     } else {
